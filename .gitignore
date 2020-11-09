@@ -1,0 +1,5 @@
+Doclerfile
+
+*.pyc
+.git
+__pycache__
