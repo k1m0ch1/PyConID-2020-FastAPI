@@ -43,7 +43,7 @@ async def get_reddit_data_api() -> dict:
     await client.close()
 
     print("Got reddit data in ---" + str(time.time() - start_time) + "seconds ---")
-    return data
+    return {"time": f"{str(time.time() - start_time)} seconds", "data": data}
 
 
 def get_reddit_top_sync(subreddit: str, data: dict):
@@ -62,14 +62,10 @@ def get_reddit_top_sync(subreddit: str, data: dict):
 
 @app.get("/sync")
 def get_reddit_data() -> dict:
-	start_time: float = time.time()
-	data: dict = {}
+    start_time: float = time.time()
+    data: dict = {}
 
-	get_reddit_top_sync("python", data)
-	get_reddit_top_sync("programming", data)
-	get_reddit_top_sync("indonesia", data)
-	
-
-	print("Got reddit data in ---" + str(time.time() - start_time) + "second ---")
-	return data
-
+    get_reddit_top_sync("python", data)
+    get_reddit_top_sync("programming", data)
+    get_reddit_top_sync("indonesia", data)
+    return {"time": f"{str(time.time() - start_time)}seconds" ,"data": data}
