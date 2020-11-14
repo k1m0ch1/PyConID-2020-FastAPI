@@ -38,7 +38,7 @@ async def get_reddit_data_api() -> dict:
     await asyncio.gather(
         get_reddit_top('python', client, data),
         get_reddit_top('programming', client, data),
-        get_reddit_top('compsci', client, data),
+        get_reddit_top('indonesia', client, data),
     )
     await client.close()
 
@@ -68,4 +68,4 @@ def get_reddit_data() -> dict:
     get_reddit_top_sync("python", data)
     get_reddit_top_sync("programming", data)
     get_reddit_top_sync("indonesia", data)
-    return {"time": f"{str(time.time() - start_time)}seconds" ,"data": data}
+    return {"time": f"{str(time.time() - start_time)} seconds" ,"data": data}
