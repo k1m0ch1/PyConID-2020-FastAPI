@@ -1,6 +1,9 @@
 FROM python:3.8-alpine
 
-RUN pip install pipenv uvicorn 
+RUN apk --update add --no-cache gcc \
+	linux-headers libc-dev make
+
+RUN pip install pipenv  
 
 WORKDIR /app
 COPY src/app .
