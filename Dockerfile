@@ -3,9 +3,7 @@ FROM python:3.8-alpine
 RUN pip install pipenv uvicorn 
 
 WORKDIR /app
-COPY src/main.py .
-COPY src/flaskApp flaskApp/.
-COPY src/routes routes/.
+COPY src/app .
 
 COPY Pipfile Pipfile.lock ./
 RUN pipenv install --system --deploy

@@ -27,7 +27,7 @@ async def post_saving(data: Account):
 
 @account.post("/expense")
 async def post_expense(data: Account):
-	data['category'] = 'expense'
+	data.category = 'expense'
 	data.index = len(PiggyBank)+1
 	PiggyBank.append(data.dict())
 	return {"data": data.dict(), "message": "new expense is saved"}

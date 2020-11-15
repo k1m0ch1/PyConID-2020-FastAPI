@@ -3,3 +3,4 @@ Doclerfile
 *.pyc
 .git
 __pycache__
+*.swp
