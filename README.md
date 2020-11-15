@@ -32,3 +32,23 @@ Reposity tree file :
 ├── Pipfile
 └── Pipfile.lock
 ```
+
+## Requirements to install
+
+- pipenv (if you already have `pip` just install pipenv with `pip install pipenv`)
+- docker ( to build )
+
+## How to Run
+
+1. go to the `src/exercise` if you want to run every single code I preset and run this command
+(don't use `pipenv run` if you already install the uvicorn and fastapi)
+```
+pipenv run uvicorn typing-validation:app
+```
+
+2. if you want to run a whole code I preset, you can go to `src/app` and run this command
+```
+pipenv run uvicorn main:app
+```
+
+
